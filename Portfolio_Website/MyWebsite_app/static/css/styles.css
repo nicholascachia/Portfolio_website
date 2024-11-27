@@ -1,0 +1,80 @@
+
+.bg-gradient {
+    background: linear-gradient(90deg, #b3d9ff, #a0c4e0); /* Soft pastel blue gradient */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.feature-icon {
+    width: 4rem;
+    height: 4rem;
+    border-radius: .75rem;
+    
+}
+
+.feature-icon-tech {
+    width: 3rem;
+    height: 3rem;
+    border-radius: .5rem;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+.card-wrapper {
+    background-color: rgba(0, 0, 0, 0.1);  /* Faded black background (adjust alpha for transparency) */
+    border-radius: 8px;                    /* Rounded corners for smooth edges */
+    padding: 20px;                         /* Padding to separate content from the edges */
+    margin-bottom: 30px;                   /* Margin to create space between cards */
+}
+
+.links-wrapper {
+    background-color: rgba(27, 138, 189, 0.226);  /* Faded black background (adjust alpha for transparency) */
+    border-radius: 8px;                    /* Rounded corners for smooth edges */
+    padding: 20px;                         /* Padding to separate content from the edges */
+    margin-bottom: 30px;                   /* Margin to create space between cards */
+}
+
+.gradient-background {
+    /* background: linear-gradient(45deg, #00BFFF, #20B2AA, #4682B4, #5F9EA0); Ocean Breeze Palette */
+    /* background: linear-gradient(45deg, #000000, #FFFFFF, #CCCCCC); classic black and White */
+    /* background: linear-gradient(45deg, #1E2A47, #4C6A92, #A3C1D1, #D1E3E0); Blue-Gray Palette */
+    background: linear-gradient(45deg, #FFB3BA, #FFDFBA, #FFFFBA, #BAFFB3, #BAE1FF); /*Soft Pastels Palette*/
+
+    background-size: 200% 200%;  /* Enlarged gradient */
+    animation: gradient-animation 15s ease infinite; /* Faster animation */
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.highlight {
+    background-color: yellow;
+    color: black;
+    padding: 0 2px;
+    border-radius: 2px;
+}
+
+.custom-shadow-blue {
+ box-shadow: 0 12px 24px rgba(0, 123, 255, 0.3), 0 4px 6px rgba(0, 123, 255, 0.2);
+}
+
+
+.captcha-container img {
+max-width: 100%; /* Ensure the CAPTCHA image scales */
+height: auto;
+border: 1px solid #ccc;
+border-radius: 5px;
+}

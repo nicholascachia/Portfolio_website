@@ -1,0 +1,35 @@
+{% extends 'portfolio/base.html' %}
+
+{% block title %}Contact Form{% endblock%}
+
+{% block content %}
+
+<div class="row container col-md-10 mx-auto">
+    <h1>Contact</h1>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="mb-3">
+                {{ form.name.label_tag }} {{ form.name }}
+            </div>
+            <div class="mb-3">
+                {{ form.email.label_tag }} {{ form.email }}
+            </div>
+            <div class="mb-3">
+                {{ form.subject.label_tag }} {{ form.subject }}
+            </div>
+            <div class="mb-3">
+                {{ form.message.label_tag }} {{ form.message }}
+            </div>
+
+            <div class="mb-3 captcha-container">
+                {{ form.captcha.label_tag }} 
+                <div class="captcha-box">
+                    {{ form.captcha }}
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-success">Send</button>
+        </form>
+
+</div>
+{% endblock %}

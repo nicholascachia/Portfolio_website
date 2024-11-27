@@ -1,0 +1,100 @@
+{% extends 'portfolio/base.html' %}
+
+{% block title %} Nick Portfolio {% endblock %}
+{% load static %}
+{% block content %}
+
+<div class="py-5 mb-0 gradient-background">
+  <div class="container col-md-10 col-lg-8 mx-auto text-center">
+
+    <!-- <h1 class="my-4 text-primary fw-bold display-4">Welcome</h1> -->
+
+    <h1 class="my-4 text-primary fw-bold display-4" data-aos="slide-up" data-aos-duration="4500" >
+      <i class="fas fa-code"></i> Welcome
+    </h1>
+
+    <p class="fs-5 text-muted mb-4" data-aos="fade-in" data-aos-duration="4500" data-aos-delay="500">
+      My name is <span class="fw-bold text-dark">Nicholas Cachia</span>, a front-end developer based in Malta.  
+      I specialize in diverse <span class="text-primary">Python projects</span> and web applications, utilizing  
+      <span class="fw-bold text-secondary">Bootstrap</span>, <span class="fw-bold text-secondary">CSS</span>, and <span class="fw-bold text-secondary">JavaScript</span>.  
+      I focus on crafting clean, user-friendly interfaces that are visually appealing and seamless to use.
+    </p>
+  </div>
+</div>
+
+<div class="row container col-md-10 mx-auto">
+            <!-- <div class="container-fluid col-12 col-md-6 col-lg-4" > -->
+              <h1 class="my-4 text-center"> My Work Gallery</h1>
+              <h4 class="my-4 text-center">A collection of projects I've worked on.</h4> 
+              <!-- <div class="container mx-auto"> -->
+                {% for post in posts %}
+                  <div class="col-md-3 mb-3  mx-auto" data-aos="fade-in" data-aos-duration="4500" data-aos-delay="500">
+                      <div class="card mb-4 custom-shadow-blue" >
+                          {% if post.image %}
+                          <img src="{{ post.image.url }}" class="card-img-top" alt="{{ post.title }}">
+                          {% endif %}
+
+                          <div class="card-body">
+                              <h5 class="card-title">{{ post.title }}</h5>
+                              <p class="card-text">{{ post.description|truncatewords:20|safe }}</p>
+                              <p class="card-text">{{ post.link|truncatewords:20 }}</p>
+                              <p class="card-text">{{ post.technologies|truncatewords:20 }}</p>
+                          </div>
+                      </div>
+                  </div>
+                {% endfor %}
+              <!-- </div> -->
+            <!-- </div> -->
+
+            
+</div>
+<!-- Section for link  Resume download contact and blog -->
+<div class="py-5 links-wrapper mx-auto">  
+  <div class="container col-md-10 mx-auto">
+    <div class="container px-4 py-5 mx-auto" id="featured-3">
+        <h2 class="pb-2 border-bottom"></h2>
+        <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+          <div class="feature col">
+            <div
+              class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+              <img src="{% static 'images/briefcase.svg' %}" alt="briefcase" height="30">
+            </div>
+            <h3 class="fs-2">Technologies</h3>
+            <div
+              class="feature-icon-tech d-inline-flex align-items-center justify-content-center bg-light bg-gradient fs-2 mb-3">
+              <img src="{% static 'images/django-icon.svg' %}" alt="django-icon" height="30">
+            </div>
+          </div>
+          <div class="feature col">
+            <div
+              class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+              <img src="{% static 'images/briefcase.svg' %}" alt="briefcase" height="20">
+            </div>
+            <h3 class="fs-2">Resume</h3>
+            <p></p>
+            <a href="{% url 'download_cv' %}" class="icon-link">
+              Download Resume
+              <img src="{% static 'images/chevron-right.svg' %}" alt="chevron-right">
+            </a>
+          </div>
+          <div class="feature col">
+            <div
+              class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+              <img src=" {% static 'images/chat-square-heart.svg' %}" alt="chat-square-heart" height="30">
+            </div>
+            <h3 class="fs-2">Contact</h3>
+            <p>
+                        
+
+            </p>
+            <a href="{% url 'contact_page' %}" class="icon-link">
+              Get in Touch
+              <img src="{% static 'images/chevron-right.svg' %}" alt="chevron-right">
+            </a>
+          </div>
+        </div>
+    </div>       
+  </div>     
+</div> 
+
+{% endblock %}
